@@ -20,7 +20,9 @@ export class TipsComponent implements OnInit {
 
   allLanguages: Language[] = [
     { name: "Afrikaans", code: "af" },
-    { name: "English", code: "en" }
+    { name: "English", code: "en" },
+    { name: "Arabic", code: "ar" }, 
+    { name: "German", code: "de"}
   ];
 
   currentLanguage: Language = {
