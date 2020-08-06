@@ -1,12 +1,35 @@
-<div class="content"> 
-<h2> Please click the following buttons to get the tips for caseworkers</h2>
-
-<div>
-    <a href="assets/caseworkers/caseworkers_English.pdf"><button class= "buttons"> <a href="assets/caseworkers/caseworkers_English.pdf" class="button-text">Tips for caseworkers in English</a></button></a>
-    <a href="assets/caseworkers/caseworkers_Spanish.pdf"><button class= "buttons"> <a href="assets/caseworkers/caseworkers_Spanish.pdf" class="button-text">Tips  for caseworkers in Spanish</a></button></a>
-    <a href="assets/caseworkers/caseworkers_French.pdf"><button class= "buttons"> <a href="assets/caseworkers/caseworkers_French.pdf" class="button-text">Tips for caseworkers in French</a></button></a>
-</div>
-</div>
-
+<div class="caseworkers-container" >  
+    <!--before curve-->
+    <svg class="curve-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,240C384,256,480,256,576,234.7C672,213,768,171,864,149.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    
+    <div class="content" data-aos="zoom-in" data-aos-duration="1000">
+        <h2 class="main-header-one">COVID-19:</h2>
+        <h2 class="main-header-two">24/7 PARENTING</h2>
+        <h3 class="main-header-three">Proven parenting tips for case workers</h3>
+        <p class="tips-info">Click the links below to access the tips for caseworkers</p>
+            
+        <div class="tips-container">
+          <!--todo get the tip sheet image sources-->
+        <a class="tip-card" *ngFor="let tipSheet of visibleTipSheets" [href]="tipSheet.pdfSrc">
+            <!--<div class="tip-thumbnail">         
+                  <img class="thumbnail-img" src="{{ tipSheet.thumnailSrc }}" />
+            </div>   -->
+            <div class="tip-title">{{ tipSheet.title }}</div> 
+        </a> 
+      </div>
+      <div>
+        <span class="btn-load-more" (click)="viewMoreTipSheets()" *ngIf="showloadMoreButton">See more tip sheets</span> 
+     </div>
+    </div>
+  
+    <!--after curve--> 
+    <svg class="curve-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 280"><path fill="#0a4160" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,240C384,256,480,256,576,234.7C672,213,768,171,864,149.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+  </div>
+   <!-- footer-->
+   <div class="home-footer-background" >  
+    <app-footer></app-footer>
+  </div> 
+  <!--/footer-->
+ 
 
  
