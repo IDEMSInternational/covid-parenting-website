@@ -9,13 +9,13 @@
 
 .contact-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* todo change this to row */
 }
 
 .contact-info {
   padding-right: 40px;
-  text-align: right;
-  flex: 40%;
+  text-align: left;  /* todo change this to right */
+  /* flex: 40%; todo activate this  */
 }
 
 .contact-form {
