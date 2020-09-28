@@ -6,6 +6,7 @@ import { TipsComponent } from './tips/tips.component';
 import { PsaComponent } from './psa/psa.component';
 import { CaseworkersComponent } from './caseworkers/caseworkers.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { EplhSurveyComponent } from './eplh-survey/eplh-survey.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: "contactus",
     component: ContactusComponent
+  },
+  {
+    path: "eplh-survey",
+    component: EplhSurveyComponent
   },
   {
     path: "",
