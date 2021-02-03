@@ -50,7 +50,7 @@ const MENU_ITEMS: MenuItem[] = [
       { name: "Reach by Dissemination Method", href: "/impact", fragment: "reach-by-dissemination" },
       { name: "Impact Stories", href: "/impactstories" },
       { name: "Champions of Children", href: "/impactchampions" },
-      { name: "Impact Map", href: "/impactmap" }
+      /*{ name: "Impact Map", href: "/impactmap" }*/
 
     ]
   },
