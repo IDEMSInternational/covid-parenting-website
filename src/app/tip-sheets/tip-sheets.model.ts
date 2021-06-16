@@ -1,5 +1,5 @@
 export type LanguageCSVRow = {
-    languageType: number;
+    languageType: number; //type 1 is English name, type 2 is English alternatives, type 3 is non English characters names
     languageCode: string;
     languageName: string;
     tipSheetNumber: number;
