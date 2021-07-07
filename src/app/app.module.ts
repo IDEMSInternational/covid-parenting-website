@@ -72,7 +72,8 @@ import { WhocampaignComponent } from './whocampaign/whocampaign.component';
 import { Socialmedia2Component } from './socialmedia2/socialmedia2.component';
 import { GpicampaignComponent } from './gpicampaign/gpicampaign.component';
 import { FaqComponent } from './faq/faq.component';
-import { FavtipsComponent } from './favtips/favtips.component'
+import { FavtipsComponent } from './favtips/favtips.component';
+import { GlobalInitiativeSupportParentsComponent } from './global-initiative-support-parents/global-initiative-support-parents.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -131,7 +132,8 @@ import { FavtipsComponent } from './favtips/favtips.component'
     Socialmedia2Component,
     GpicampaignComponent,
     FaqComponent,
-    FavtipsComponent
+    FavtipsComponent,
+    GlobalInitiativeSupportParentsComponent
   ],
   imports: [
     BrowserModule,
