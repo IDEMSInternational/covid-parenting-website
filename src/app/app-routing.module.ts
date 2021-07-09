@@ -34,6 +34,9 @@ import { GpicampaignComponent } from './gpicampaign/gpicampaign.component';
 import { FaqComponent } from './faq/faq.component';
 import { FavtipsComponent } from './favtips/favtips.component';
 import { GlobalInitiativeSupportParentsComponent } from './global-initiative-support-parents/global-initiative-support-parents.component';
+import { NewWebnarInnovateComponent } from './new-webnar-innovate/new-webnar-innovate.component';
+import { SaveDatesJulyComponent } from './save-dates-july/save-dates-july.component';
+import { PlayfulParentingMonthComponent } from './playful-parenting-month/playful-parenting-month.component';
 
 
 
@@ -72,7 +75,11 @@ const routes: Routes = [
   { path: "faq", component: FaqComponent },
   { path: "favtips", component: FavtipsComponent },
   { path: "global-initiative-support-parents", component: GlobalInitiativeSupportParentsComponent },
+  { path: "new-webnar-innovate", component: NewWebnarInnovateComponent },
+  { path: "save-dates-july", component: SaveDatesJulyComponent },
+  { path: "playful-parenting-month", component: PlayfulParentingMonthComponent },
 
+  
   {
     path: "blog",
     component: BlogComponent,
