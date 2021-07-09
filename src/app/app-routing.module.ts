@@ -33,6 +33,7 @@ import { Socialmedia2Component } from './socialmedia2/socialmedia2.component';
 import { GpicampaignComponent } from './gpicampaign/gpicampaign.component';
 import { FaqComponent } from './faq/faq.component';
 import { FavtipsComponent } from './favtips/favtips.component';
+import { GlobalInitiativeSupportParentsComponent } from './global-initiative-support-parents/global-initiative-support-parents.component';
 
 
 
@@ -70,6 +71,7 @@ const routes: Routes = [
   { path: "gpicampaign", component: GpicampaignComponent },
   { path: "faq", component: FaqComponent },
   { path: "favtips", component: FavtipsComponent },
+  { path: "global-initiative-support-parents", component: GlobalInitiativeSupportParentsComponent },
 
   {
     path: "blog",
