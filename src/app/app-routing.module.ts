@@ -37,6 +37,7 @@ import { GlobalInitiativeSupportParentsComponent } from './global-initiative-sup
 import { NewWebnarInnovateComponent } from './new-webnar-innovate/new-webnar-innovate.component';
 import { SaveDatesJulyComponent } from './save-dates-july/save-dates-july.component';
 import { PlayfulParentingMonthComponent } from './playful-parenting-month/playful-parenting-month.component';
+import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
 
 
 
@@ -78,6 +79,7 @@ const routes: Routes = [
   { path: "new-webnar-innovate", component: NewWebnarInnovateComponent },
   { path: "save-dates-july", component: SaveDatesJulyComponent },
   { path: "playful-parenting-month", component: PlayfulParentingMonthComponent },
+  { path: "new-webinar-innovate", component: NewWebinarInnovateComponent},
 
   
   {

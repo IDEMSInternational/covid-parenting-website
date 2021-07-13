@@ -78,7 +78,8 @@ import { NewWebnarInnovateComponent } from './new-webnar-innovate/new-webnar-inn
 import { SaveDatesJulyComponent } from './save-dates-july/save-dates-july.component';
 import { PlayfulParentingMonthComponent } from './playful-parenting-month/playful-parenting-month.component';
 import { ScienceOfScaleComponent } from './science-of-scale/science-of-scale.component';
-import { SospisdewComponent } from './sospisdew/sospisdew.component'
+import { SospisdewComponent } from './sospisdew/sospisdew.component';
+import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -143,7 +144,8 @@ import { SospisdewComponent } from './sospisdew/sospisdew.component'
     SaveDatesJulyComponent,
     PlayfulParentingMonthComponent,
     ScienceOfScaleComponent,
-    SospisdewComponent
+    SospisdewComponent,
+    NewWebinarInnovateComponent
   ],
   imports: [
     BrowserModule,
