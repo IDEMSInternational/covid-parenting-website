@@ -39,6 +39,7 @@ import { SaveDatesJulyComponent } from './save-dates-july/save-dates-july.compon
 import { PlayfulParentingMonthComponent } from './playful-parenting-month/playful-parenting-month.component';
 import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
 import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component';
+import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component';
 
 
 
@@ -82,6 +83,9 @@ const routes: Routes = [
   { path: "playful-parenting-month", component: PlayfulParentingMonthComponent },
   { path: "new-webinar-innovate", component: NewWebinarInnovateComponent},
   { path: "parent-chat-helping-milos", component: ParentChatHelpingMilosComponent},
+  { path: "professor-cathy-wards-alan-pifer-award", component: ProfessorCathyWardsAlanPiferAwardComponent},
+
+  
 
   
 

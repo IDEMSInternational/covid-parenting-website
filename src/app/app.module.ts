@@ -80,7 +80,8 @@ import { PlayfulParentingMonthComponent } from './playful-parenting-month/playfu
 import { ScienceOfScaleComponent } from './science-of-scale/science-of-scale.component';
 import { SospisdewComponent } from './sospisdew/sospisdew.component';
 import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
-import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component'
+import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component';
+import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -147,7 +148,8 @@ import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/par
     ScienceOfScaleComponent,
     SospisdewComponent,
     NewWebinarInnovateComponent,
-    ParentChatHelpingMilosComponent
+    ParentChatHelpingMilosComponent,
+    ProfessorCathyWardsAlanPiferAwardComponent
   ],
   imports: [
     BrowserModule,
