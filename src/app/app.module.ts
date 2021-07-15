@@ -79,7 +79,8 @@ import { SaveDatesJulyComponent } from './save-dates-july/save-dates-july.compon
 import { PlayfulParentingMonthComponent } from './playful-parenting-month/playful-parenting-month.component';
 import { ScienceOfScaleComponent } from './science-of-scale/science-of-scale.component';
 import { SospisdewComponent } from './sospisdew/sospisdew.component';
-import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component'
+import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
+import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -145,7 +146,8 @@ import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-
     PlayfulParentingMonthComponent,
     ScienceOfScaleComponent,
     SospisdewComponent,
-    NewWebinarInnovateComponent
+    NewWebinarInnovateComponent,
+    ParentChatHelpingMilosComponent
   ],
   imports: [
     BrowserModule,
