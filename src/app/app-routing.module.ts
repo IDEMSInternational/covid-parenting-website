@@ -40,6 +40,7 @@ import { PlayfulParentingMonthComponent } from './playful-parenting-month/playfu
 import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
 import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component';
 import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component';
+import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-by-cdc-and-university-of-oxford/global-study-by-cdc-and-university-of-oxford.component';
 
 
 
@@ -84,13 +85,9 @@ const routes: Routes = [
   { path: "new-webinar-innovate", component: NewWebinarInnovateComponent},
   { path: "parent-chat-helping-milos", component: ParentChatHelpingMilosComponent},
   { path: "professor-cathy-wards-alan-pifer-award", component: ProfessorCathyWardsAlanPiferAwardComponent},
+  { path: "global-study-by-CDC-and-University-of-Oxford", component: GlobalStudyByCDCAndUniversityOfOxfordComponent},
 
-  
-
-  
-
-  
-  {
+      {
     path: "blog",
     component: BlogComponent,
     pathMatch: "full"

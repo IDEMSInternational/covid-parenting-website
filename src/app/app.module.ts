@@ -81,7 +81,8 @@ import { ScienceOfScaleComponent } from './science-of-scale/science-of-scale.com
 import { SospisdewComponent } from './sospisdew/sospisdew.component';
 import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
 import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component';
-import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component'
+import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component';
+import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-by-cdc-and-university-of-oxford/global-study-by-cdc-and-university-of-oxford.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -149,7 +150,8 @@ import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wa
     SospisdewComponent,
     NewWebinarInnovateComponent,
     ParentChatHelpingMilosComponent,
-    ProfessorCathyWardsAlanPiferAwardComponent
+    ProfessorCathyWardsAlanPiferAwardComponent,
+    GlobalStudyByCDCAndUniversityOfOxfordComponent
   ],
   imports: [
     BrowserModule,
