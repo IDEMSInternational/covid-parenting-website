@@ -82,7 +82,8 @@ import { SospisdewComponent } from './sospisdew/sospisdew.component';
 import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
 import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component';
 import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component';
-import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-by-cdc-and-university-of-oxford/global-study-by-cdc-and-university-of-oxford.component'
+import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-by-cdc-and-university-of-oxford/global-study-by-cdc-and-university-of-oxford.component';
+import { ConsentsComponent } from './consents/consents.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -151,7 +152,8 @@ import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-b
     NewWebinarInnovateComponent,
     ParentChatHelpingMilosComponent,
     ProfessorCathyWardsAlanPiferAwardComponent,
-    GlobalStudyByCDCAndUniversityOfOxfordComponent
+    GlobalStudyByCDCAndUniversityOfOxfordComponent,
+    ConsentsComponent
   ],
   imports: [
     BrowserModule,

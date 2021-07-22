@@ -41,6 +41,7 @@ import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-
 import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component';
 import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component';
 import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-by-cdc-and-university-of-oxford/global-study-by-cdc-and-university-of-oxford.component';
+import { ConsentsComponent } from './consents/consents.component';
 
 
 
@@ -86,6 +87,7 @@ const routes: Routes = [
   { path: "parent-chat-helping-milos", component: ParentChatHelpingMilosComponent},
   { path: "professor-cathy-wards-alan-pifer-award", component: ProfessorCathyWardsAlanPiferAwardComponent},
   { path: "global-study-by-CDC-and-University-of-Oxford", component: GlobalStudyByCDCAndUniversityOfOxfordComponent},
+  { path: "consents", component: ConsentsComponent },
 
       {
     path: "blog",
