@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet'
+import { MAP_URL } from 'src/assets/impacts/map/mapurl';
 
 @Component({
   selector: 'app-members-map',
@@ -25,26 +26,30 @@ export class MembersMapComponent implements AfterViewInit {
       zoomSnap:0.25,
       minZoom: 2,
       maxZoom:4,
-      dragging: true,
+      dragging: false,
+      zoomControl: false,
+      touchZoom: false
       
     }).setView([0.0, 0], 2);
 
-    const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png',{
+    const tiles = L.tileLayer(MAP_URL,{
       maxZoom: 20,
-      attribution:'Map data © OpenStreetMap contributors'
-    });
+      attribution:'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>'
+    }).addTo(this.m);
 
 
     const myIcon = L.icon({
       iconUrl:'assets/icon/favicon.png',
       iconSize:[18, 18]
     })
-    L.marker([-10.25, 33.30], {icon: myIcon}).addTo(this.m)
-    .bindPopup('What this initiative has done to my family is so profound. I am able to appreciate the world of children, and I think I am learning good parenting. It has also challenged me to look at this crazy time I have found myself i through the positive lens of hope.<br> <b style = "color:#5dbcd2;">- Parent in Malawi from Without Orphans </b><br><br> We understand that it is very hard for parents to adjust to the new norm, as they will have their children at home more than they are used to due to schools being closed. [The COVID-19 parenting resources] not only bring relief as we parent, but also challenge parenting in general, for some of us have failed miserably to parent well. It will leave a lasting impact and is amazing we have learnt this through a church in our community. <br> <b style = "color:#5dbcd2;">- Parent from Malawi</b> <br><br> Thanks to parenting tips materials, family relationships are being enhanced.Most of our 23 local church partners have testified to how parents have been awakened to what should be natural and fun in families. Thriving social life relationships in most families have, unfortunately, been non-existent; and thanks to Covid19 as it has simply exposed this fact..<br> <b style = "color:#5dbcd2;">- World Without Orphans, Malawi </b><br><br> If I have found these (tips) helpful, for sure they should be for all parents and caregivers in our village. They are also applicable to people of all faiths, and I will highly recommend to the village head so we could advocate across our community. They are timely.<br> <b style = "color:#5dbcd2;">- Counsellor to village Headman Mphamba in Malawi </b><br><br> Regular radio broadcasts for 11 million')
+    L.marker([33.9391, 67.7100], {icon: myIcon}).addTo(this.m)
+    .bindPopup('Afghanistan')
     .openPopup();
 
-    L.marker([40, 139.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('This isnt just something that helps with the corona disaster, its something that helps with the whole emergency situations. Let us be positive, Im sure that means praising yourself with the little things, not just your kids, but yourself as well.<br> - <b style = "color:#5dbcd2;">Comments on online article, Unicef Japan</b> ')
+    L.marker([41.1533, 20.1683], {icon: myIcon}).addTo(this.m)
+    .bindPopup('Albania')
     .openPopup();
 
     L.marker([7.10, 37.10], {icon: myIcon}).addTo(this.m)

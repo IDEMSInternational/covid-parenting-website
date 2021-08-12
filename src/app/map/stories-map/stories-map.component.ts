@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import * as L from 'leaflet'
+import { MAP_URL } from 'src/assets/impacts/map/mapurl';
 
 @Component({
   selector: 'app-stories-map',
@@ -32,11 +33,10 @@ export class StoriesMapComponent implements OnInit {
       //boxZoom: false
     }).setView([0.0, 0], 2);
 
-    const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png',{
+    const tiles = L.tileLayer(MAP_URL,{
       maxZoom: 20,
       attribution:'Map data © OpenStreetMap contributors'
     });
-
 
     const myIcon = L.icon({
       iconUrl:'assets/icon/favicon.png',

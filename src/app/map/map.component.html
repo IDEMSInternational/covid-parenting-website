@@ -2,33 +2,28 @@
 <app-newletterribbon></app-newletterribbon>
 <div class="content">
     <div class="tabset">
-        <!-- Tab 1 -->
         <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
         <label for="tab1">Stories</label>
 
-        <!---->
-        <!-- Tab 2 
         <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-        <label for="tab2">Members</label>-->
-        <!-- Tab 
+        <label for="tab2">UNICEF Partners</label>
+
         <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
-        <label for="tab3">Funders</label>3 -->
+        <label for="tab3">GOVT Partners</label>
         
         <div class="tab-panels">
           <section class="tab-panel">
             <h2>Stories</h2>
             <app-stories-map></app-stories-map>            
-        </section>
-          <section class="tab-panel">
-            <h2>Members</h2>
-            <app-members-map></app-members-map>
-            
           </section>
           <section class="tab-panel">
-            <h2>Funders</h2>
+            <h2>UNICEF Partners</h2>
+            <app-members-map></app-members-map>
+          </section>
+          <section class="tab-panel">
+            <h2>GOVT Partners</h2>
             <app-funders-map></app-funders-map>
           </section>
-        </div>
-        
+        </div>  
       </div>
 </div>
