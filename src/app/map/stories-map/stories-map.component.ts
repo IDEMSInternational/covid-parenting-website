@@ -8,7 +8,6 @@ import { MAP_URL } from 'src/assets/impacts/map/mapurl';
   styleUrls: ['./stories-map.component.scss']
 })
 
-
 export class StoriesMapComponent implements OnInit {
 
   private map;
@@ -18,8 +17,6 @@ export class StoriesMapComponent implements OnInit {
   ngOnInit(): void {
     this.initMap();
   }
-
- 
 
   private initMap() {
     this.map = L.map('map',{
@@ -42,6 +39,7 @@ export class StoriesMapComponent implements OnInit {
       iconUrl:'assets/icon/favicon.png',
       iconSize:[18, 18]
     })
+    
     L.marker([-10.25, 33.30], {icon: myIcon}).addTo(this.map)
     .bindPopup('What this initiative has done to my family is so profound. I am able to appreciate the world of children, and I think I am learning good parenting. It has also challenged me to look at this crazy time I have found myself i through the positive lens of hope.<br> <b style = "color:#5dbcd2;">- Parent in Malawi from Without Orphans </b><br><br> We understand that it is very hard for parents to adjust to the new norm, as they will have their children at home more than they are used to due to schools being closed. [The COVID-19 parenting resources] not only bring relief as we parent, but also challenge parenting in general, for some of us have failed miserably to parent well. It will leave a lasting impact and is amazing we have learnt this through a church in our community. <br> <b style = "color:#5dbcd2;">- Parent from Malawi</b> <br><br> Thanks to parenting tips materials, family relationships are being enhanced.Most of our 23 local church partners have testified to how parents have been awakened to what should be natural and fun in families. Thriving social life relationships in most families have, unfortunately, been non-existent; and thanks to Covid19 as it has simply exposed this fact..<br> <b style = "color:#5dbcd2;">- World Without Orphans, Malawi </b><br><br> If I have found these (tips) helpful, for sure they should be for all parents and caregivers in our village. They are also applicable to people of all faiths, and I will highly recommend to the village head so we could advocate across our community. They are timely.<br> <b style = "color:#5dbcd2;">- Counsellor to village Headman Mphamba in Malawi </b><br><br> Regular radio broadcasts for 11 million')
     .openPopup();
