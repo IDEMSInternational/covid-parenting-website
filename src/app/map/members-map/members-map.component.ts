@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet'
 import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
 
@@ -16,6 +16,7 @@ export class MembersMapComponent implements OnInit {
 
   ngOnInit(): void {
     this.initMap();
+    this.onMapReady(this.map);
   }
 
   private initMap() {
@@ -26,7 +27,6 @@ export class MembersMapComponent implements OnInit {
       maxZoom:2,
       dragging: false,
       zoomControl: false,
-      
     }).setView([0.0, 0], 2);
 
     const tiles = L.tileLayer(MAP_URL,{
@@ -163,4 +163,9 @@ export class MembersMapComponent implements OnInit {
     tiles.addTo(this.map);
   }
 
+  onMapReady(map): void {
+    setTimeout(() => {
+      map.invalidateSize();
+    });
+}
 }

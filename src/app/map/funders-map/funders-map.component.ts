@@ -16,6 +16,7 @@ export class FundersMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.onMapReady(this.map)
     this.initMap();
   }
 
@@ -168,6 +169,13 @@ export class FundersMapComponent implements OnInit {
     L.marker([24.0583, 105.2772], {icon: myIcon}).addTo(this.map)
     .bindPopup('Vietnam')
     .openPopup();
+
+    tiles.addTo(this.map);
   }
 
+  onMapReady(map): void {
+    setTimeout(() => {
+      map.invalidateSize();
+    });
+  }
 }

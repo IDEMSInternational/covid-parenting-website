@@ -25,9 +25,7 @@ export class StoriesMapComponent implements OnInit {
       minZoom: 2,
       maxZoom:2,
       dragging: false,
-      zoomControl: false,
-      //scrollWheelZoom: false
-      //boxZoom: false
+      zoomControl: false
     }).setView([0.0, 0], 2);
 
     const tiles = L.tileLayer(MAP_URL,{
@@ -69,11 +67,11 @@ export class StoriesMapComponent implements OnInit {
     .bindPopup('<img style="max-width: -webkit-fill-available;" src="assets/impacts/map/Pakistan.png"/></br><b>Pakistan:</b> National television broadcasts')
     .openPopup();
 
-    L.marker([40, 73.10], {icon: myIcon}).addTo(this.map)
+    L.marker([42.2044, 72.7661], {icon: myIcon}).addTo(this.map)
     .bindPopup('<img style="max-width: -webkit-fill-available;" src="assets/impacts/map/Kyrgyzstan.png"/></br><b>Kyrgyzstan:</b> Cartoon videos on national television reaching over 2 million people')
     .openPopup();
 
-    L.marker([20, 103.10], {icon: myIcon}).addTo(this.map)
+    L.marker([19.8563, 102.495], {icon: myIcon}).addTo(this.map)
     .bindPopup('<b>Laos:</b> National Government and UNICEF speakers in 5,800 villages for 50% of population')
     .openPopup();
 
@@ -81,7 +79,7 @@ export class StoriesMapComponent implements OnInit {
     .bindPopup('<img style="max-width: -webkit-fill-available;" src="assets/impacts/map/Thailand.png"/></br><b>Thailand:</b> Government distributed leaflets in Health Promotion hospitals throughout the country')
     .openPopup();
 
-    L.marker([42, 10.10], {icon: myIcon}).addTo(this.map)
+    L.marker([42.7087, 19.3744], {icon: myIcon}).addTo(this.map)
     .bindPopup('<b>Montenegro:</b> Emergency phone lines, webinars, food parcels')
     .openPopup();
 
@@ -89,11 +87,11 @@ export class StoriesMapComponent implements OnInit {
     .bindPopup('<b>South Africa:</b> National radio broadcasts in 7 languages')
     .openPopup();
 
-    L.marker([-25, -55.10], {icon: myIcon}).addTo(this.map)
+    L.marker([-23.4425, -56.4438], {icon: myIcon}).addTo(this.map)
     .bindPopup('<b>Paraguay:</b> 1million reached online with the First Lady’s support')
     .openPopup();
 
-    L.marker([15, -85.40], {icon: myIcon}).addTo(this.map)
+    L.marker([17.2835, -89.8308], {icon: myIcon}).addTo(this.map)
     .bindPopup('<b>Guatemala:</b> Ministries of Health and Education')
     .openPopup();
     tiles.addTo(this.map);
