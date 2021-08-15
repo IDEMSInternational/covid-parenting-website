@@ -1,29 +1,36 @@
 <app-banner></app-banner>
 <app-newletterribbon></app-newletterribbon>
 <div class="content">
-  <div class="tabset">
-    <input type="radio" name="tabset" id="tab1" value="stories" (click) = onClick($event)>
-    <label for="tab1">STORIES</label>
+    <div class="tabset">
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked (click)="loadStoriesComponent()">
+        <label for="tab1">Stories</label>
 
-    <input type="radio" name="tabset" id="tab2" value="unicef" (click) = onClick($event)>
-    <label for="tab2">UNICEF Partners</label>
-
-    <input type="radio" name="tabset" id="tab3" value="govt" (click) = onClick($event)>
-    <label for="tab3">GOVT Partners</label>
-    
-    <div class="tab-panels">
-      <section class="tab-panel">
-        <h2>STORIES</h2>
-        <app-stories-map></app-stories-map>            
-      </section>
-      <section class="tab-panel">
-        <h2>UNICEF Partners</h2>
-        <app-members-map></app-members-map>
-      </section>
-      <section class="tab-panel">
-        <h2>GOVT Partners</h2>
-        <app-funders-map></app-funders-map>
-      </section>
-    </div>  
-  </div>
+       
+        <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier" (click)="loadMembersComponent()">
+        <label for="tab2">Members</label>
+        
+        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles" (click)="loadFundersComponent()">
+        <label for="tab3">Funders</label>
+        
+        <div class="tab-panels">
+          <section class="tab-panel">
+            <h2>Stories</h2>
+            <ng-template #storiesmaptemp></ng-template>
+            <!-- <app-stories-map></app-stories-map>             -->
+        </section>
+          <section class="tab-panel">
+            <h2>Members</h2>
+            <ng-template #membersmaptemp></ng-template>
+            <!-- <app-members-map></app-members-map> -->
+            
+          </section>
+          <section class="tab-panel">
+            <h2>Funders</h2>
+            <ng-template #fundersmaptemp></ng-template>
+            <!-- <app-funders-map></app-funders-map> -->
+          </section>
+        </div>
+        
+      </div>
 </div>

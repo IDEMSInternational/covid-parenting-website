@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet'
-import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
 
 @Component({
   selector: 'app-members-map',
@@ -8,46 +7,38 @@ import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
   styleUrls: ['./members-map.component.scss']
 })
 
-export class MembersMapComponent implements OnInit, AfterViewInit {
+export class MembersMapComponent implements AfterViewInit {
+
   private map;
 
-  constructor(){ }
+  constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+   
     this.initMap();
   }
 
-  ngAfterViewInit():void{
-    this.map.invalidateSize();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  protected __onResize(event: any): void
-  {
-    this.map.invalidateSize();
-  }
-  
   private initMap() {
-    this.map = L.map('unicef-map',{
+  
+    this.map = L.map('map2',{
       zoomDelta:0.25,
       zoomSnap:0.25,
       minZoom: 2,
-      maxZoom:2,
-      dragging: false,
-      zoomControl: false,
+      maxZoom:4,
+      dragging: true,
+      
     }).setView([0.0, 0], 2);
 
-    const tiles = L.tileLayer(MAP_URL,{
+    const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png',{
       maxZoom: 20,
-      attribution: MAP_ATTR,
-      errorTileUrl:'' ,
+      attribution:'Map data © OpenStreetMap contributors'
     });
 
     const myIcon = L.icon({
       iconUrl:'assets/icon/favicon.png',
       iconSize:[18, 18]
     })
-
+    
     L.marker([33.9391, 65.7100], {icon: myIcon}).addTo(this.map)
     .bindPopup('Afghanistan')
     .openPopup();
@@ -169,9 +160,7 @@ export class MembersMapComponent implements OnInit, AfterViewInit {
     .openPopup();
 
     tiles.addTo(this.map);
+
   }
 
-  onMapReady(event): void {
-    this.map.invalidateSize();
-  }
 }

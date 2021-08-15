@@ -1,37 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver } from '@angular/core';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-
 export class MapComponent implements OnInit {
-  private allRadios = document.getElementsByTagName('input');
 
-  constructor() { }
+  @ViewChild('membersmaptemp', {read: ViewContainerRef})
+  private membersviewcontainerref: ViewContainerRef;
 
-  ngOnInit(): void {
-    this.allRadios[0].checked = true;
-    this.allRadios[1].checked = false;
-    this.allRadios[2].checked = false;
+  @ViewChild('fundersmaptemp', {read: ViewContainerRef})
+  private fundersviewcontainerref: ViewContainerRef;
+
+  @ViewChild('storiesmaptemp', {read: ViewContainerRef})
+  private storiesviewcontainerref: ViewContainerRef;
+
+  constructor(private vcref: ViewContainerRef, private cfr: ComponentFactoryResolver) { }
+
+  ngOnInit() {
+    this.loadStoriesComponent();  
   }
 
-  onClick(_event){
-      if (this.allRadios[0].type == 'radio' && this.allRadios[0].value == 'stories') {
-          this.allRadios[0].checked = true;
-          document.getElementById('tab2').style.display='none';
-          document.getElementById('tab3').style.display='none';
-      }
-      else if (this.allRadios[1].type == 'radio' && this.allRadios[1].value == 'unicef') {
-        this.allRadios[1].checked = true;
-        document.getElementById('tab1').style.display='none';
-        document.getElementById('tab3').style.display='none';
-      } 
-      else if (this.allRadios[2].type == 'radio' && this.allRadios[2].value == 'govt') {
-        this.allRadios[2].checked = true;
-        document.getElementById('tab1').style.display='none';
-        document.getElementById('tab2').style.display='none';
-      }
+ async loadMembersComponent(){
+   this.vcref.clear();
+   const {MembersMapComponent} = await import('./members-map/members-map.component')
+  // let membersmapcomp = this.vcref.createComponent(this.cfr.resolveComponentFactory(MembersMapComponent));
+  this.membersviewcontainerref.createComponent(this.cfr.resolveComponentFactory(MembersMapComponent));
   }
+
+  async loadFundersComponent(){
+    this.vcref.clear();
+    const {FundersMapComponent} = await import('./funders-map/funders-map.component')
+   this.fundersviewcontainerref.createComponent(this.cfr.resolveComponentFactory(FundersMapComponent));
+   }
+
+   async loadStoriesComponent(){
+    this.vcref.clear();
+    const {StoriesMapComponent} = await import('./stories-map/stories-map.component')
+   this.storiesviewcontainerref.createComponent(this.cfr.resolveComponentFactory(StoriesMapComponent));
+   console.log('stories map component loaded');
+   }
 }
