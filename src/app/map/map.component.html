@@ -3,7 +3,7 @@
 <div class="content">
     <div class="tabset">
         <!-- Tab 1 -->
-        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked (click)="loadStoriesComponent()">
         <label for="tab1">Stories</label>
 
        
@@ -16,6 +16,7 @@
         <div class="tab-panels">
           <section class="tab-panel">
             <h2>Stories</h2>
+            <ng-template #storiesmaptemp></ng-template>
             <!-- <app-stories-map></app-stories-map>             -->
         </section>
           <section class="tab-panel">

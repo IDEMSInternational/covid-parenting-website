@@ -15,12 +15,14 @@ export class StoriesMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
     this.initMap();
   }
 
  
 
   private initMap() {
+   
     this.map = L.map('map',{
       zoomDelta:0.25,
       zoomSnap:0.25,

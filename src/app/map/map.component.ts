@@ -14,9 +14,13 @@ export class MapComponent implements OnInit {
   @ViewChild('fundersmaptemp', {read: ViewContainerRef})
   private fundersviewcontainerref: ViewContainerRef;
 
+  @ViewChild('storiesmaptemp', {read: ViewContainerRef})
+  private storiesviewcontainerref: ViewContainerRef;
+
   constructor(private vcref: ViewContainerRef, private cfr: ComponentFactoryResolver) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.loadStoriesComponent();  
   }
 
  async loadMembersComponent(){
@@ -30,5 +34,12 @@ export class MapComponent implements OnInit {
     this.vcref.clear();
     const {FundersMapComponent} = await import('./funders-map/funders-map.component')
    this.fundersviewcontainerref.createComponent(this.cfr.resolveComponentFactory(FundersMapComponent));
+   }
+
+   async loadStoriesComponent(){
+    this.vcref.clear();
+    const {StoriesMapComponent} = await import('./stories-map/stories-map.component')
+   this.storiesviewcontainerref.createComponent(this.cfr.resolveComponentFactory(StoriesMapComponent));
+   console.log('stories map component loaded');
    }
 }

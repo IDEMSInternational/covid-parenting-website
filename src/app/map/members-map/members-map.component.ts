@@ -14,12 +14,14 @@ export class MembersMapComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
+   
     this.initMap();
   }
 
  
 
   private initMap() {
+  
     this.m = L.map('map2',{
       zoomDelta:0.25,
       zoomSnap:0.25,
