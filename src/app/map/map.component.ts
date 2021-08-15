@@ -39,7 +39,6 @@ export class MapComponent implements OnInit {
    async loadStoriesComponent(){
     this.vcref.clear();
     const {StoriesMapComponent} = await import('./stories-map/stories-map.component')
-   this.storiesviewcontainerref.createComponent(this.cfr.resolveComponentFactory(StoriesMapComponent));
-   console.log('stories map component loaded');
+    this.storiesviewcontainerref.createComponent(this.cfr.resolveComponentFactory(StoriesMapComponent));
    }
 }

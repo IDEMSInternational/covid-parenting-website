@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet'
+import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
 
 @Component({
   selector: 'app-funders-map',
@@ -18,8 +19,6 @@ export class FundersMapComponent implements OnInit {
     this.initMap();
   }
 
- 
-
   private initMap() {
     
     this.map = L.map('map3',{
@@ -31,11 +30,10 @@ export class FundersMapComponent implements OnInit {
       
     }).setView([0.0, 0], 2);
 
-    const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png',{
+    const tiles = L.tileLayer(MAP_URL,{
       maxZoom: 20,
-      attribution:'Map data © OpenStreetMap contributors'
+      attribution: MAP_ATTR
     });
-
 
     const myIcon = L.icon({
       iconUrl:'assets/icon/favicon.png',
