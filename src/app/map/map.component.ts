@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent implements OnInit {
 
+export class MapComponent implements OnInit {
   private allRadios = document.getElementsByTagName('input');
-  private i;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,7 +17,7 @@ export class MapComponent implements OnInit {
     this.allRadios[2].checked = false;
   }
 
-  onClick(event){
+  onClick(_event){
       if (this.allRadios[0].type == 'radio' && this.allRadios[0].value == 'stories') {
           this.allRadios[0].checked = true;
           document.getElementById('tab2').style.display='none';

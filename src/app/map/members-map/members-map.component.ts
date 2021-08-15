@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import * as L from 'leaflet'
 import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
 
@@ -8,17 +8,25 @@ import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
   styleUrls: ['./members-map.component.scss']
 })
 
-export class MembersMapComponent implements OnInit {
-
+export class MembersMapComponent implements OnInit, AfterViewInit {
   private map;
 
-  constructor() { }
+  constructor(){ }
 
   ngOnInit(): void {
     this.initMap();
-    this.onMapReady(this.map);
   }
 
+  ngAfterViewInit():void{
+    this.map.invalidateSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  protected __onResize(event: any): void
+  {
+    this.map.invalidateSize();
+  }
+  
   private initMap() {
     this.map = L.map('unicef-map',{
       zoomDelta:0.25,
@@ -163,9 +171,7 @@ export class MembersMapComponent implements OnInit {
     tiles.addTo(this.map);
   }
 
-  onMapReady(map): void {
-    setTimeout(() => {
-      map.invalidateSize();
-    });
-}
+  onMapReady(event): void {
+    this.map.invalidateSize();
+  }
 }

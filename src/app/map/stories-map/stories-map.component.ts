@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet'
 import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
 
