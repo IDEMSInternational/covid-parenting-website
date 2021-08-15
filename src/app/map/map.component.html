@@ -10,7 +10,7 @@
         <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier" (click)="loadMembersComponent()">
         <label for="tab2">Members</label>
         
-        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles" (click)="loadFundersComponent()">
         <label for="tab3">Funders</label>
         
         <div class="tab-panels">
@@ -26,6 +26,7 @@
           </section>
           <section class="tab-panel">
             <h2>Funders</h2>
+            <ng-template #fundersmaptemp></ng-template>
             <!-- <app-funders-map></app-funders-map> -->
           </section>
         </div>
