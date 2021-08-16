@@ -42,6 +42,7 @@ import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/par
 import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component';
 import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-by-cdc-and-university-of-oxford/global-study-by-cdc-and-university-of-oxford.component';
 import { ConsentsComponent } from './consents/consents.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 
 
@@ -55,6 +56,9 @@ const routes: Routes = [
   { path: "tips", component: TipsComponent },
   { path: "tips/:langCode", component: TipsComponent },
   { path: "tips/:langCode/index.html", component: TipsComponent },
+  { path: "articles", component: ArticlesComponent },
+  { path: "articles/:articleTitle", component: ArticlesComponent },
+
   { path: "caseworkers", component: CaseworkersComponent },
   { path: "psa", component: PsaComponent },
   { path: "digitalparenting", component: DigitalparentingComponent },
