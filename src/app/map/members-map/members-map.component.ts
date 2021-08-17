@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet'
+import { MAP_ATTR, MAP_URL } from 'src/assets/impacts/map/mapurl';
 
 @Component({
   selector: 'app-members-map',
@@ -7,20 +8,19 @@ import * as L from 'leaflet'
   styleUrls: ['./members-map.component.scss']
 })
 
-export class MembersMapComponent implements AfterViewInit {
+export class MembersMapComponent implements OnInit {
 
-  private m;
+  private map;
 
   constructor() { }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void { 
     this.initMap();
+    localStorage.removeItem('bar'); 
   }
 
- 
-
   private initMap() {
-    this.m = L.map('map2',{
+    this.map = L.map('map2',{
       zoomDelta:0.25,
       zoomSnap:0.25,
       minZoom: 2,
@@ -29,74 +29,137 @@ export class MembersMapComponent implements AfterViewInit {
       
     }).setView([0.0, 0], 2);
 
-    const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png',{
+    const tiles = L.tileLayer(MAP_URL,{
       maxZoom: 20,
-      attribution:'Map data © OpenStreetMap contributors'
+      attribution:MAP_ATTR
     });
-
 
     const myIcon = L.icon({
       iconUrl:'assets/icon/favicon.png',
       iconSize:[18, 18]
     })
-    L.marker([-10.25, 33.30], {icon: myIcon}).addTo(this.m)
-    .bindPopup('What this initiative has done to my family is so profound. I am able to appreciate the world of children, and I think I am learning good parenting. It has also challenged me to look at this crazy time I have found myself i through the positive lens of hope.<br> <b style = "color:#5dbcd2;">- Parent in Malawi from Without Orphans </b><br><br> We understand that it is very hard for parents to adjust to the new norm, as they will have their children at home more than they are used to due to schools being closed. [The COVID-19 parenting resources] not only bring relief as we parent, but also challenge parenting in general, for some of us have failed miserably to parent well. It will leave a lasting impact and is amazing we have learnt this through a church in our community. <br> <b style = "color:#5dbcd2;">- Parent from Malawi</b> <br><br> Thanks to parenting tips materials, family relationships are being enhanced.Most of our 23 local church partners have testified to how parents have been awakened to what should be natural and fun in families. Thriving social life relationships in most families have, unfortunately, been non-existent; and thanks to Covid19 as it has simply exposed this fact..<br> <b style = "color:#5dbcd2;">- World Without Orphans, Malawi </b><br><br> If I have found these (tips) helpful, for sure they should be for all parents and caregivers in our village. They are also applicable to people of all faiths, and I will highly recommend to the village head so we could advocate across our community. They are timely.<br> <b style = "color:#5dbcd2;">- Counsellor to village Headman Mphamba in Malawi </b><br><br> Regular radio broadcasts for 11 million')
+    
+    L.marker([33.9391, 65.7100], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Afghanistan')
     .openPopup();
 
-    L.marker([40, 139.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('This isnt just something that helps with the corona disaster, its something that helps with the whole emergency situations. Let us be positive, Im sure that means praising yourself with the little things, not just your kids, but yourself as well.<br> - <b style = "color:#5dbcd2;">Comments on online article, Unicef Japan</b> ')
+    L.marker([41.2533, 21.4683], {icon: myIcon}).addTo(this.map)
+    .bindPopup('*Albania')
     .openPopup();
 
-    L.marker([7.10, 37.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('The messages are important and guiding especially this time when adolescents are at home. <br> <b style = "color:#5dbcd2;">- Catholic Relief Services (CRS), Kenya </b><br><br> Safaricom ringtones of COVID-19 parenting song')
+    L.marker([28.0339, 1.6596], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Algeria')
     .openPopup();
 
-  
-    L.marker([47, 10.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('The children of the world have an urgent need for safe havens right now, in both a spiritual and physical sense. Spiritual support - through this kind of creative engagement designed especially for children -can give a renewed sense of hope to families and churches alike.<br> <b style = "color:#5dbcd2;">- WCC Interim General Secretary Rev. Prof. Dr Ioan Sauca about the Church Leaders Pack </b>')
+    L.marker([25.6850, 89.3563], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Bangladesh')
     .openPopup();
 
-    L.marker([27, 76.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<b>India:</b> Food parcels and phone based support by community workers')
+    L.marker([15.1657, 104.9910], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Cambodia')
     .openPopup();
 
-    L.marker([16, 120.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<b>Phillipines:</b> National Government and UNICEF webinars for caseworkers and families')
+    L.marker([45.1, 17.2], {icon: myIcon}).addTo(this.map)
+    .bindPopup('*Croatia')
     .openPopup();
 
-    L.marker([32, 71.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<img style="max-width: -webkit-fill-available;" src="assets/impacts/map/Pakistan.png"/></br><b>Pakistan:</b> National television broadcasts')
+    L.marker([13.7943, -85.8965], {icon: myIcon}).addTo(this.map)
+    .bindPopup('El Salvador')
     .openPopup();
 
-    L.marker([40, 73.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<img style="max-width: -webkit-fill-available;" src="assets/impacts/map/Kyrgyzstan.png"/></br><b>Kyrgyzstan:</b> Cartoon videos on national television reaching over 2 million people')
+    L.marker([64.9631, -19.0208], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Iceland')
     .openPopup();
 
-    L.marker([20, 103.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<b>Laos:</b> National Government and UNICEF speakers in 5,800 villages for 50% of population')
+    L.marker([20.5937, 78.9629], {icon: myIcon}).addTo(this.map)
+    .bindPopup('India')
     .openPopup();
 
-    L.marker([16, 103.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<img style="max-width: -webkit-fill-available;" src="assets/impacts/map/Thailand.png"/></br><b>Thailand:</b> Government distributed leaflets in Health Promotion hospitals throughout the country')
+    L.marker([-0.1893, 112.9213], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Indonesia')
     .openPopup();
 
-    L.marker([42, 10.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<b>Montenegro:</b> Emergency phone lines, webinars, food parcels')
+    L.marker([33.2232, 43.6793], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Iraq')
     .openPopup();
 
-    L.marker([-31.5, 19.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<b>South Africa:</b> National radio broadcasts in 7 languages')
+    L.marker([21.1096, -76.2975], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Jamaica')
     .openPopup();
 
-    L.marker([-25, -55.10], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<b>Paraguay:</b> 1million reached online with the First Lady’s support')
+    L.marker([36.2084, 135.2529], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Japan')
     .openPopup();
 
-    L.marker([15, -85.40], {icon: myIcon}).addTo(this.m)
-    .bindPopup('<b>Guatemala:</b> Ministries of Health and Education')
+    L.marker([31.98523, 36.9384 ], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Jordan')
     .openPopup();
-    tiles.addTo(this.m);
 
+    L.marker([0.9236, 37.9062], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Kenya')
+    .openPopup();
+
+    L.marker([19.8563, 102.4955], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Laos')
+    .openPopup();
+
+    L.marker([-28.610, 28.2336], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Lesotho')
+    .openPopup();
+
+    L.marker([4.2105, 102.9758], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Malaysia')
+    .openPopup();
+
+    L.marker([3.9028, 74.2207], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Maldives')
+    .openPopup();
+
+    L.marker([46.8625, 103.8467], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Mongolia')
+    .openPopup();
+
+    L.marker([42.7087, 19.3744], {icon: myIcon}).addTo(this.map)
+    .bindPopup('*Montenegro')
+    .openPopup();
+
+    L.marker([21.9162, 95.956], {icon: myIcon}).addTo(this.map)
+    .bindPopup('*Myanmar')
+    .openPopup();
+
+    L.marker([33.9522, 36.2332], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Palestine')
+    .openPopup();
+
+    L.marker([9.538, -78.7821], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Panama')
+    .openPopup();
+
+    L.marker([-3.0122, 150.347], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Papua New Guinea')
+    .openPopup();
+
+    L.marker([12.8797, 121.774], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Phillipines')
+    .openPopup();
+
+    L.marker([-30.5595, 22.9375], {icon: myIcon}).addTo(this.map)
+    .bindPopup('South Africa')
+    .openPopup();
+
+    L.marker([15.87, 100.9925], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Thailand')
+    .openPopup();
+
+    L.marker([-7.1742, 125.1275], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Timor Leste')
+    .openPopup();
+
+    L.marker([8.4238, -66.5897], {icon: myIcon}).addTo(this.map)
+    .bindPopup('Venezuela')
+    .openPopup();
+
+    tiles.addTo(this.map);
   }
 
 }
