@@ -14,8 +14,9 @@ export class MembersMapComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.initMap();
+    localStorage.removeItem('bar'); 
   }
 
   private initMap() {

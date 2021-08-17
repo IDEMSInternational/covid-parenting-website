@@ -15,9 +15,11 @@ export class StoriesMapComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.initMap();
+    localStorage.removeItem('foo'); 
   }
+
 
   private initMap() {
     this.map = L.map('map',{
@@ -95,7 +97,6 @@ export class StoriesMapComponent implements OnInit {
     .bindPopup('<b>Guatemala:</b> Ministries of Health and Education')
     .openPopup();
     tiles.addTo(this.map);
-
   }
 
 }

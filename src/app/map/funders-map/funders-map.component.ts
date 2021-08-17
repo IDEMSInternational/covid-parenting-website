@@ -17,6 +17,7 @@ export class FundersMapComponent implements OnInit {
 
   ngOnInit(): void {
     this.initMap();
+    localStorage.removeItem('foo-bar'); 
   }
 
   private initMap() {
