@@ -64,9 +64,7 @@ import { SearchComponent } from './search/search.component'
 import { HighlightSearchPipe} from './pipes/highlight-search.pipe'
 
 import { FormsModule } from '@angular/forms';
-import { StoriesMapComponent } from './map/stories-map/stories-map.component';
-import { MembersMapComponent } from './map/members-map/members-map.component';
-import { FundersMapComponent } from './map/funders-map/funders-map.component';
+
 import { BrandingComponent } from './branding/branding.component';
 import { WhocampaignComponent } from './whocampaign/whocampaign.component';
 import { Socialmedia2Component } from './socialmedia2/socialmedia2.component';
@@ -134,9 +132,6 @@ import { ConsentsComponent } from './consents/consents.component'
     PodcastsComponent,
     SearchComponent,
     HighlightSearchPipe,
-    StoriesMapComponent,
-    MembersMapComponent,
-    FundersMapComponent,
     BrandingComponent,
     WhocampaignComponent,
     Socialmedia2Component,
