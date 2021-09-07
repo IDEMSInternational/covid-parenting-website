@@ -64,15 +64,25 @@ import { SearchComponent } from './search/search.component'
 import { HighlightSearchPipe} from './pipes/highlight-search.pipe'
 
 import { FormsModule } from '@angular/forms';
-import { StoriesMapComponent } from './map/stories-map/stories-map.component';
-import { MembersMapComponent } from './map/members-map/members-map.component';
-import { FundersMapComponent } from './map/funders-map/funders-map.component';
+
 import { BrandingComponent } from './branding/branding.component';
 import { WhocampaignComponent } from './whocampaign/whocampaign.component';
 import { Socialmedia2Component } from './socialmedia2/socialmedia2.component';
 import { GpicampaignComponent } from './gpicampaign/gpicampaign.component';
 import { FaqComponent } from './faq/faq.component';
-import { FavtipsComponent } from './favtips/favtips.component'
+import { FavtipsComponent } from './favtips/favtips.component';
+import { GlobalInitiativeSupportParentsComponent } from './global-initiative-support-parents/global-initiative-support-parents.component';
+import { NewWebnarInnovateComponent } from './new-webnar-innovate/new-webnar-innovate.component';
+import { SaveDatesJulyComponent } from './save-dates-july/save-dates-july.component';
+import { PlayfulParentingMonthComponent } from './playful-parenting-month/playful-parenting-month.component';
+import { ScienceOfScaleComponent } from './science-of-scale/science-of-scale.component';
+import { SospisdewComponent } from './sospisdew/sospisdew.component';
+import { NewWebinarInnovateComponent } from './new-webinar-innovate/new-webinar-innovate.component';
+import { ParentChatHelpingMilosComponent } from './parent-chat-helping-milos/parent-chat-helping-milos.component';
+import { ProfessorCathyWardsAlanPiferAwardComponent } from './professor-cathy-wards-alan-pifer-award/professor-cathy-wards-alan-pifer-award.component';
+import { GlobalStudyByCDCAndUniversityOfOxfordComponent } from './global-study-by-cdc-and-university-of-oxford/global-study-by-cdc-and-university-of-oxford.component';
+import { ConsentsComponent } from './consents/consents.component';
+import { ArticlesComponent } from './articles/articles.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -123,15 +133,24 @@ import { FavtipsComponent } from './favtips/favtips.component'
     PodcastsComponent,
     SearchComponent,
     HighlightSearchPipe,
-    StoriesMapComponent,
-    MembersMapComponent,
-    FundersMapComponent,
     BrandingComponent,
     WhocampaignComponent,
     Socialmedia2Component,
     GpicampaignComponent,
     FaqComponent,
-    FavtipsComponent
+    FavtipsComponent,
+    GlobalInitiativeSupportParentsComponent,
+    NewWebnarInnovateComponent,
+    SaveDatesJulyComponent,
+    PlayfulParentingMonthComponent,
+    ScienceOfScaleComponent,
+    SospisdewComponent,
+    NewWebinarInnovateComponent,
+    ParentChatHelpingMilosComponent,
+    ProfessorCathyWardsAlanPiferAwardComponent,
+    GlobalStudyByCDCAndUniversityOfOxfordComponent,
+    ConsentsComponent,
+    ArticlesComponent
   ],
   imports: [
     BrowserModule,

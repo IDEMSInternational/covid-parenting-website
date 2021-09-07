@@ -2,33 +2,28 @@
 <app-newletterribbon></app-newletterribbon>
 <div class="content">
     <div class="tabset">
-        <!-- Tab 1 -->
-        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
-        <label for="tab1">Stories</label>
-
-        <!---->
-        <!-- Tab 2 
-        <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
-        <label for="tab2">Members</label>-->
-        <!-- Tab 
-        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
-        <label for="tab3">Funders</label>3 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked (click)="loadStoriesComponent()">
+        <label for="tab1">STORIES</label>
+       
+        <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier" (click)="loadMembersComponent()">
+        <label for="tab2">UNICEF Partners</label>
+        
+        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles" (click)="loadFundersComponent()">
+        <label for="tab3">GOVERNMENT Partners</label>
         
         <div class="tab-panels">
           <section class="tab-panel">
             <h2>Stories</h2>
-            <app-stories-map></app-stories-map>            
+            <ng-template #storiesmaptemp></ng-template>
         </section>
           <section class="tab-panel">
-            <h2>Members</h2>
-            <app-members-map></app-members-map>
-            
+            <h2>UNICEF Partners</h2>
+            <ng-template #membersmaptemp></ng-template>
           </section>
           <section class="tab-panel">
-            <h2>Funders</h2>
-            <app-funders-map></app-funders-map>
+            <h2>GOVERNMENT Partners</h2>
+            <ng-template #fundersmaptemp></ng-template>
           </section>
         </div>
-        
       </div>
 </div>

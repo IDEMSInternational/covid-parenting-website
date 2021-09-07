@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Language } from '../tip-sheets/tip-sheets.model';
+import { TipSheetService } from '../tip-sheets/tip-sheet.service';
 
 @Component({
   selector: 'app-tips-lang-select',
@@ -8,32 +9,48 @@ import { Language } from '../tip-sheets/tip-sheets.model';
 })
 export class TipsLangSelectComponent implements OnInit, OnChanges {
 
-  @Input() currentLanguage: Language;
   @Output() onLanguageChange: EventEmitter<Language> = new EventEmitter();
-
-  @Input() languages: Language[] = [{ type: 1, code: "en", name: "English" }];
-  selectedRange: string[] = ["C", "F"];
+  @Input() currentLanguage: Language = { type: 1, code: "en", name: "English" };
+   languages: Language[] = [{ type: 1, code: "en", name: "English" }];
+  selectedRange: string[] = ["C", "F"]; //should always be contained in the letter ranges
   letterRanges: string[][] = [["A", "B"], ["C", "F"], ["G", "J"], ["K", "L"], ["M", "P"], ["R", "S"], ["T", "Z"], ["OTHERS", ""]];
   dropdownLanguages: Language[] = [];
 
-  constructor() { }
+  constructor(private tipSheetService: TipSheetService) {
+   
+    this.tipSheetService.getLanguages().subscribe((languages) => {
+      this.languages = languages;
+    });
+
+   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.languages) {
-      this.onLetterRangeClick(this.selectedRange, false);
+
+     if (changes.currentLanguage) {
+      let newCurrentLanguage: Language = changes.currentLanguage.currentValue;
+      let newLetterRange: string[][] = this.letterRanges.filter((range) => {
+        return newCurrentLanguage.name.toLowerCase()[0] == range[0].toLowerCase();
+      });
+
+      if (newLetterRange.length > 0){
+        this.onLetterRangeClick(newLetterRange[0], newCurrentLanguage, true);
+      }else{
+        this.onLetterRangeClick(this.selectedRange, newCurrentLanguage, true);
+      }
+
     }
+
   }
 
   ngOnInit(): void {
-    this.onLetterRangeClick(this.letterRanges[0], false);
   }
 
-  onLetterRangeClick(range: string[], changeLang: boolean = true) {
+  onLetterRangeClick(range: string[], currentLanguage: Language = null, changeLang: boolean = true) {
     //for "others" do differently
     let bType2: boolean = (range[0] === "OTHERS");
     let lowerLetter: string;
     let higherLetter: string;
-    this.selectedRange = range;
+
 
     if (!bType2) {
       lowerLetter = range[0].toLowerCase();
@@ -51,9 +68,16 @@ export class TipsLangSelectComponent implements OnInit, OnChanges {
 
     });
 
+
+
+    this.selectedRange = range;
     if (changeLang && this.dropdownLanguages.length > 0) {
-      this.currentLanguage = this.dropdownLanguages[0];
-      //this.onLanguageChange.emit(this.dropdownLanguages[0]);
+      if (currentLanguage == null) {
+        this.currentLanguage = this.dropdownLanguages[0];
+      } else {
+        this.currentLanguage = this.currentLanguage;
+      }
+      this.onLanguageChange.emit(this.currentLanguage);
     }
 
   }//end method
