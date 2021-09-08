@@ -20,6 +20,9 @@
 
   }
 
+  .aligncenter{
+    text-align: center;
+  }
   
   .preview-text {
     height: 100px;
@@ -38,6 +41,22 @@
   .more-link:hover {
     color: #75c5ca;
     text-decoration: underline;
+  }
+
+
+  .row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
   }
   
   
