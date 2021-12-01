@@ -140,6 +140,10 @@ export class FundersMapComponent implements OnInit {
     L.marker([-30.5595, 22.9375], {icon: myIcon}).addTo(this.map)
     .bindPopup('South Africa')
     .openPopup();
+    
+    L.marker([4.8594, 31.5713], {icon: myIcon}).addTo(this.map)
+    .bindPopup('South Sudan')
+    .openPopup();
 
     L.marker([7.8731, 80.7718], {icon: myIcon}).addTo(this.map)
     .bindPopup('Sri-Lanka')

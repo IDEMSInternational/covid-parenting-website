@@ -205,6 +205,7 @@ const CONTRIBUTORS_LIST: Contributor[] = [
   { name: "Nayomi Silva", title: "", thumnailSrc: "/" },
   { name: "Nelia Matinhure", title: "", thumnailSrc: "/" },
   { name: "Noel Kya heh", title: "Chairman, Literature department of Akha Baptist Convention", thumnailSrc: "/" },
+  { name: "Nomagugu Masuku", title: "", thumnailSrc: "/" }, 
   { name: "Noxolo Khanyile", title: "Chairman, Literature department of Akha Baptist Convention", thumnailSrc: "/" },
   { name: "Ntsoaki Khosi", title: "Catholic Relief Service", thumnailSrc: "/" },
   { name: "Olesya Price", title: "", thumnailSrc: "/" },

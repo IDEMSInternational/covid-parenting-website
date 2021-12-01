@@ -155,6 +155,8 @@ export class MembersMapComponent implements OnInit {
     .bindPopup('Timor Leste')
     .openPopup();
 
+    
+
     L.marker([8.4238, -66.5897], {icon: myIcon}).addTo(this.map)
     .bindPopup('Venezuela')
     .openPopup();
