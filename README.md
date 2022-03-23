@@ -36,3 +36,8 @@ npm run scully -- --scanRoutes
 ```
 Then check in the modified src/assets/scully-routes.json
 
+## Going live
+
+To make changes to the live site, see [deployment instructions][1].
+
+[1]: ./docs/Deployment.md
