@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build-dev": "ng build --aot --buildOptimizer",
     "build-ng": "ng build --prod --aot --buildOptimizer",
-    "build": "npm run convert-drive-assets && npm run build-ng && npm run scully",
+    "build": "npm run build-ng && npm run scully",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
