@@ -120,7 +120,7 @@ export class TipSheetsComponent implements OnInit, OnChanges {
         } else if (strResourceType === "psa" || strResourceType === "psahowto") {
           objResourceSheet.pdfSrc = `assets/resources/psas/${row.resourceFilePrefix}.pdf`;
         } else if (strResourceType === "faithbased") {
-          objResourceSheet.pdfSrc = `assets/resources/faithbased/${row.resourceFilePrefix}.pdf`;
+          objResourceSheet.pdfSrc = `assets/resources/faithbased/${row.resourceFilePrefix}_${row.resourceLanguageCode}.pdf`;
         }
         else if (strResourceType === "socialmedia") {
           objResourceSheet.pdfSrc = `assets/resources/socialmedia/${row.resourceFilePrefix}.docx`;
