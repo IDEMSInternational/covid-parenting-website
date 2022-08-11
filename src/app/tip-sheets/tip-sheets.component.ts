@@ -30,7 +30,7 @@ export class TipSheetsComponent implements OnInit, OnChanges {
 
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -46,7 +46,7 @@ export class TipSheetsComponent implements OnInit, OnChanges {
       this.tipSheetsSubscription.unsubscribe();
     }
     this.tipSheetsSubscription = this.tipSheetService.getTipSheetsByTypeAndCode(language.type + language.code).subscribe((sheets) => {
-      this.tipSheets = sheets; 
+      this.tipSheets = sheets;
       this.visibleTipSheets = [];
       if (this.viewAllTipSheets) {
         this.visibleTipSheets = this.tipSheets;
@@ -67,16 +67,15 @@ export class TipSheetsComponent implements OnInit, OnChanges {
       startIndex = 0;
     } else {
       if (this.visibleTipSheets.length < this.tipSheets.length) {
-        startIndex = this.visibleTipSheets.length;   //from last added  
+        startIndex = this.visibleTipSheets.length;   //from last added
       } else {
         return;
-      }//end inner if
-
-    }//end if
+      }
+    }
 
     this.addElementsToVisibleTipSheets(startIndex);
     this.showloadMoreButton = this.visibleTipSheets.length < this.tipSheets.length;
-  }//end method
+  }
 
   private addElementsToVisibleTipSheets(startIndex: number) {
     let index: number;
@@ -84,11 +83,11 @@ export class TipSheetsComponent implements OnInit, OnChanges {
     for (index = startIndex; index < this.tipSheets.length; index++) {
       if (counter == this.maxTipSheetsToShow) {
         break;
-      }//end if 
+      }
       this.visibleTipSheets.push(this.tipSheets[index]);
       counter++;
-    }//end for loop
-  }//end method
+    }
+  }
 
 
   public objMergedTipsheet: TipSheet = null;
@@ -96,13 +95,13 @@ export class TipSheetsComponent implements OnInit, OnChanges {
 
   private fetchAndOtherResources(langCode: string) {
 
-    this.objMergedTipsheet = null; //reset
-    this.arrOtherResources = null; //reset array
+    this.objMergedTipsheet = null;
+    this.arrOtherResources = null;
 
     this.resourcesService.fetchResourcesByLanguage(langCode).subscribe((langResources) => {
       let strResourceType: string;
       let objResourceSheet: TipSheet;
-      this.arrOtherResources = []; //initialise array
+      this.arrOtherResources = [];
 
       langResources.forEach((row) => {
         strResourceType = row.resourceType.toLowerCase();
@@ -125,33 +124,22 @@ export class TipSheetsComponent implements OnInit, OnChanges {
         }
         else if (strResourceType === "socialmedia") {
           objResourceSheet.pdfSrc = `assets/resources/socialmedia/${row.resourceFilePrefix}.docx`;
-        }
-
-        else {
+        } else {
           return;
         }
 
         this.arrOtherResources.push(objResourceSheet);
-
-      });//end for loop
+      });
 
       //if other resources not there. set to null
       if (this.arrOtherResources.length == 0) {
         this.arrOtherResources = null;
       }
-
-
-
     });
-
-  }//end method
-
+  }
 
   public openTipSheetPDF(tipSheet: TipSheet) {
     window.open(tipSheet.pdfSrc, "__blank");
   }
 
-
-
-}//end class
-
+}
