@@ -3,14 +3,14 @@ on:
   push:
     branches:
       - master
-      - drive-pipeline
+      - actions/**
 
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
 
     steps:
       - name: Exclude Tip Sheet PDFs from Git LFS fetch
@@ -20,35 +20,37 @@ jobs:
         run: |
           sudo apt-get install gcc python-dev python-setuptools
           sudo pip install -I --no-cache-dir -U crcmod
-      - uses: actions/checkout@v1
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           lfs: true
       - name: Checkout LFS objects
         run: git lfs checkout
       - name: Cache node modules
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Setup GCloud
-        uses: google-github-actions/setup-gcloud@v0
+      - name: Authenticate to Google Cloud
+        id: 'auth'
+        uses: 'google-github-actions/auth@v1'
         with:
-          version: '290.0.1'
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-          export_default_credentials: true
-      - run: gcloud info
-      - name: npm install
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+      - name: Setup GCloud
+        uses: google-github-actions/setup-gcloud@v1
+      - name: Confirm GCloud setup
+        run: gcloud info
+      - name: Install NPM
         run: npm install
-      - name: npm run build
+      - name: Build website
         run: npm run build
-      - id: upload-files
-        name: Upload files to Google Cloud Storage (rsync)
+      - name: Upload files to Google Cloud Storage (rsync)
+        id: upload-files
         timeout-minutes: 15
         run: gsutil rsync -d -R -c -x "assets/tip_sheets/.*$" ./dist/static gs://covid-website-storage2 && gsutil web set -m index.html gs://covid-website-storage2/
