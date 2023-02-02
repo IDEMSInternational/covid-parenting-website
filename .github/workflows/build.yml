@@ -18,8 +18,9 @@ jobs:
           git config --global lfs.fetchexclude "tip_sheets"
       - name: Install crcmod
         run: |
-          sudo apt-get install gcc python-dev python-setuptools
-          sudo pip install -I --no-cache-dir -U crcmod
+          sudo apt-get install gcc python3-dev python3-setuptools
+          sudo pip3 uninstall crcmod
+          sudo pip3 install --no-cache-dir -U crcmod
       - name: Checkout code
         uses: actions/checkout@v3
         with:
