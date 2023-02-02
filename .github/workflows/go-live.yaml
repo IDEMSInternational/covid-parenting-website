@@ -1,0 +1,22 @@
+name: 'Go live!'
+on:
+  workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate to Google Cloud
+        id: 'auth'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v1
+      - name: Confirm gcloud setup
+        run: gcloud info
+      - name: Synchronize site files from staging to production
+        id: upload-files
+        timeout-minutes: 15
+        run: |
+          gsutil -m -h "Cache-Control:public, max-age=600" rsync -R -c -d gs://covid-website-storage2 gs://covid-website-storage1
+          gsutil web set -m index.html gs://covid-website-storage1/
