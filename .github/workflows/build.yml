@@ -11,7 +11,6 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-
     steps:
       - name: Exclude Tip Sheet PDFs from Git LFS fetch
         run: |
@@ -50,6 +49,8 @@ jobs:
       - name: Install NPM
         run: npm install
       - name: Build website
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
         run: npm run build
       - name: Upload files to Google Cloud Storage (rsync)
         id: upload-files
