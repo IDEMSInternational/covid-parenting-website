@@ -77,7 +77,7 @@ const routes: Routes = [
   { path: "publications", component: PublicationsComponent },
   { path: "podcasts", component: PodcastsComponent },
   { path: "search", component: SearchComponent },
-  { path: "branding", component:BrandingComponent },
+  { path: "branding", component: BrandingComponent },
   { path: "whocampaign", component: WhocampaignComponent },
   { path: "socialmedia2", component: Socialmedia2Component },
   { path: "gpicampaign", component: GpicampaignComponent },
