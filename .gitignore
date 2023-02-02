@@ -49,5 +49,7 @@ Thumbs.db
 
 /drive_assets
 src/assets/drive_assets
-scully.log
 debug.log
+scully.log
+scully/**/*.js*
+scully.*.config.js

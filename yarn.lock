@@ -1339,7 +1339,7 @@
     "semver" "7.3.2"
     "semver-intersect" "1.4.0"
 
-"@scullyio/init@^1.0.0-beta.3":
+"@scullyio/init@^1.0.0":
   "integrity" "sha512-h8j/dxuuU1eNQ3T6XxUCp+3L/pj9xswZ57HPocJ6rSCkscrKbCKh4Of51F6wF4olYh9XrehlQaEtPybXQxak9w=="
   "resolved" "https://registry.npmjs.org/@scullyio/init/-/init-1.1.4.tgz"
   "version" "1.1.4"
@@ -1368,14 +1368,14 @@
     "ws" "^7.3.1"
     "zone.js" "^0.10.3"
 
-"@scullyio/ng-lib@^1.0.0-beta.2", "@scullyio/ng-lib@1.1.1":
+"@scullyio/ng-lib@^1.0.0", "@scullyio/ng-lib@1.1.1":
   "integrity" "sha512-GfasiST/cl5axOIbq3YJtujTYuMmjbFxPJopcjYF2EJoIl15crkhdkwy27HQfieD8agTwCkwcObip+0JNI5v/Q=="
   "resolved" "https://registry.npmjs.org/@scullyio/ng-lib/-/ng-lib-1.1.1.tgz"
   "version" "1.1.1"
   dependencies:
     "tslib" "^2.0.0"
 
-"@scullyio/scully@^1.0.0-beta.2", "@scullyio/scully@1.1.1":
+"@scullyio/scully@^1.0.0", "@scullyio/scully@1.1.1":
   "integrity" "sha512-myuaGdNdZCGNR8+WsT+eInole3GK7sv8pZuFT4Tg2g9ee4SDvTtQWw0i2RJbEhJhUAViDqWzl4+IrfdelKoB2Q=="
   "resolved" "https://registry.npmjs.org/@scullyio/scully/-/scully-1.1.1.tgz"
   "version" "1.1.1"
@@ -2378,10 +2378,10 @@
   "resolved" "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
 
-"bootstrap@^4.4.0":
-  "integrity" "sha512-Io55IuQY3kydzHtbGvQya3H+KorS/M9rSNyfCGCg9WZ4pyT/lCxIlpJgG1GXW/PswzC84Tr2fBYi+7+jFVQQBw=="
-  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-4.6.0.tgz"
-  "version" "4.6.0"
+"bootstrap@~4.5.0":
+  "integrity" "sha512-o9ppKQioXGqhw8Z7mah6KdTYpNQY//tipnkxppWhPbiSWdD+1raYsnhwEZjkTHYbGee4cVQ0Rx65EhOY/HNLcQ=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-4.5.3.tgz"
+  "version" "4.5.3"
 
 "brace-expansion@^1.1.7":
   "integrity" "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="
@@ -5748,7 +5748,7 @@
     "html-escaper" "^2.0.0"
     "istanbul-lib-report" "^3.0.0"
 
-"jasmine-core@^3.6.0", "jasmine-core@>=3.5", "jasmine-core@~3.6.0":
+"jasmine-core@^3.6.0", "jasmine-core@>=3.5":
   "integrity" "sha512-8uQYa7zJN8hq9z+g8z1bqCfdC8eoDAeVnM5sfqs7KHv9/ifoJ500m018fpFc7RDaO6SWCLCXwo/wPSNcdYTgcw=="
   "resolved" "https://registry.npmjs.org/jasmine-core/-/jasmine-core-3.6.0.tgz"
   "version" "3.6.0"
