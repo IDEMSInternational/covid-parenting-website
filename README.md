@@ -22,6 +22,7 @@ Once the dependencies are installed, you should [fork][7] this code repository, 
 ```
 git clone git@github.com:IDEMSInternational/covid-parenting-website.git
 cd covid-parenting-website
+git lfs checkout
 ```
 
 Install Node package dependencies.
