@@ -6,10 +6,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Authenticate to Google Cloud
-        id: 'auth'
-        uses: 'google-github-actions/auth@v1'
+        id: auth
+        uses: google-github-actions/auth@v1
         with:
           credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+          create_credentials_file: false
       - name: Set up gcloud
         uses: google-github-actions/setup-gcloud@v1
       - name: Confirm gcloud setup
