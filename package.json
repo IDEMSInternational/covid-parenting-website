@@ -11,14 +11,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "upload": "npm run build && npm run upload-files",
-    "upload-files": "gsutil -m rsync -d -R -c ./dist/static gs://covid-website-storage2 && gsutil web set -m index.html gs://covid-website-storage2/ && open-cli http://covidp2.idems.international",
-    "golive": "gsutil -m -h \"Cache-Control:public, max-age=600\" rsync -R -c gs://covid-website-storage2 gs://covid-website-storage1 && gsutil web set -m index.html gs://covid-website-storage1/ && open-cli https://covid19parenting.com",
-    "deploy-cleanup": "gsutil -m -h \"Cache-Control:public, max-age=600\" rsync -R -d gs://covid-website-storage2 gs://covid-website-storage1 && gsutil web set -m index.html gs://covid-website-storage1/",
     "scully": "scully",
     "scully:serve": "scully serve",
     "convert-drive-assets": "ts-node --project tsconfig.scripts.json scripts/convert-drive-assets.ts",
     "test-scripts": "jasmine-ts --project tsconfig.scripts.json --config=scripts.jasmine.json",
-    "upload-tip-sheets": "gsutil -m rsync -R -c ./tip_sheets gs://covid-website-pdfs1/assets/tip_sheets"
   },
   "private": true,
   "dependencies": {
